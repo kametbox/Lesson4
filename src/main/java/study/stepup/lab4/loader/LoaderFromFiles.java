@@ -23,7 +23,6 @@ public class LoaderFromFiles implements Loader{
 
         List<DataType> dataFromFiles = new ArrayList<>();
         for (File file : files) {
-            System.out.println("name= "+ file.getName());
             try {
                 Scanner scan = new Scanner(file);
                 while (scan.hasNext()) {
@@ -32,11 +31,12 @@ public class LoaderFromFiles implements Loader{
                     DataType dataType = new DataType();
                     if (words.length == 7) {
                         try {
+                            dataType.setFileName(file.getName());
                             dataType.setLogin(words[0]);
                             dataType.setSurname(words[1]);
                             dataType.setName(words[2]);
                             dataType.setPatr(words[3]);
-                            dataType.setAccesDate(Timestamp.valueOf(words[4]+" "+words[5]));
+                            dataType.setAccesDate(words[4]+" "+words[5]);
                             dataType.setApplication(words[6]);
 
                             dataFromFiles.add(dataType);
@@ -51,7 +51,6 @@ public class LoaderFromFiles implements Loader{
                 System.out.println(fileNotFoundException.fillInStackTrace());
             }
         }
-        System.out.println("dataFromFiles= "+dataFromFiles);
         return dataFromFiles;
     }
 }

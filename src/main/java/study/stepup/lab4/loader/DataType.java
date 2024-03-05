@@ -11,25 +11,14 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Component
-@Scope("prototype")
 public class DataType {
     //Логин Фамилия Имя Отчество дата_входа тип_приложения
+    private String fileName;
     private String login;
     private String surname;
     private String name;
     private String patr;
-    private Timestamp accesDate;
+    //private Timestamp accesDate;
+    private String accesDate;
     private String application;
-    @Override
-    public String toString() {
-        return "DataType{" +
-                "login='" + login + '\'' +
-                ", surname='" + surname + '\'' +
-                ", name='" + name + '\'' +
-                ", patr='" + patr + '\'' +
-                ", accesDate=" + accesDate +
-                ", application='" + application + '\'' +
-                '}';
-    }
 }
