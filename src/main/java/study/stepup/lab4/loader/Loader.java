@@ -1,5 +1,7 @@
 package study.stepup.lab4.loader;
 
+import java.util.List;
+
 public interface Loader {
-    LoadingData loadData(String path);
+    List<DataType> loadData(String path);
 }

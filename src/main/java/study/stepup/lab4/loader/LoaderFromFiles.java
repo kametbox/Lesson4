@@ -1,6 +1,7 @@
 package study.stepup.lab4.loader;
 
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import java.io.File;
@@ -10,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-@NoArgsConstructor
+@RequiredArgsConstructor
 @Component
 public class LoaderFromFiles implements Loader{
-    public LoadingData loadData(String path){
+    public List<DataType> loadData(String path){
         File folder;
         folder = new File(path);
         if (!folder.isDirectory()) throw new IllegalArgumentException("Programm argumets incorrect. Please insert a folder path");
@@ -50,8 +51,7 @@ public class LoaderFromFiles implements Loader{
                 System.out.println(fileNotFoundException.fillInStackTrace());
             }
         }
-        LoadingData loadingData = new LoadingData(dataFromFiles);
-        System.out.println("1!!"+loadingData.getAllData().toString());
-        return loadingData;
+        System.out.println("dataFromFiles= "+dataFromFiles);
+        return dataFromFiles;
     }
 }

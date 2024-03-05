@@ -3,25 +3,17 @@ package study.stepup.lab4.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import study.stepup.lab4.inserter.InsertingData;
 import study.stepup.lab4.loader.*;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class ProcService {
-    LoadingData loadingData;
+    private final InsertingData insertingData;
+    private final LoaderFromFiles loaderFromFiles;
     public void mainStart(String path) {
-        System.out.println("------------------------------------");
-        Loader loader = new LoaderFromFiles();
-        loadingData = loader.loadData(path);
-        System.out.println("------------------------------------");
-        System.out.println("Вывод из мейна");
-        System.out.println("------------------------------------");
-        System.out.println(loadingData);
-        loadingData.start();
-
-        System.out.println("done");
-
-
-
+        List<DataType> dataTypeList = loaderFromFiles.loadData(path);
+        insertingData.start(dataTypeList);
     }
 }

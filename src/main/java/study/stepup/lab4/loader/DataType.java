@@ -3,12 +3,16 @@ package study.stepup.lab4.loader;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import java.sql.Timestamp;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-
+@Component
+@Scope("prototype")
 public class DataType {
     //Логин Фамилия Имя Отчество дата_входа тип_приложения
     private String login;

@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Data
 @Entity
-//@Table(name="logins")
+@Table(name="logins")
 public class Logins {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,7 +21,7 @@ public class Logins {
     private Timestamp accesDate;
 
     @ManyToOne
-    //@JoinColumn(name="user_id")
+    @JoinColumn(name="user_id")
     private Users userId;
 
     private String application;
