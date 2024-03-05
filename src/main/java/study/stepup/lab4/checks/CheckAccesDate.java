@@ -1,5 +1,6 @@
 package study.stepup.lab4.checks;
 
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import study.stepup.lab4.loader.DataType;
 
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Component
+@Order(1)
 public class CheckAccesDate implements Checks{
     public List<DataType> start(List<DataType> dataTypeList) throws IOException {
 

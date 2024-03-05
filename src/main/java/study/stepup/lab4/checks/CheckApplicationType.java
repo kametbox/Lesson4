@@ -1,5 +1,6 @@
 package study.stepup.lab4.checks;
 
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import study.stepup.lab4.loader.DataType;
 
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@Order(3)
 public class CheckApplicationType implements Checks{
     @LogTransformation
     public List<DataType> start(List<DataType> dataTypeList) {
