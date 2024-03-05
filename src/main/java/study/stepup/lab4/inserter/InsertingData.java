@@ -2,7 +2,6 @@ package study.stepup.lab4.inserter;
 
 import lombok.*;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 import study.stepup.lab4.loader.DataType;
 import study.stepup.lab4.model.Logins;
 import study.stepup.lab4.model.Users;

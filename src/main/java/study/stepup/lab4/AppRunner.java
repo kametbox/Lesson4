@@ -18,10 +18,9 @@ public class AppRunner implements ApplicationRunner {
     public void run(ApplicationArguments args) throws IOException {
         String[] ar = args.getSourceArgs();
         String path = "";
-        for (int i = 0; i < ar.length; i++) {
-            path = ar[i];
+        for (String s : ar) {
+            path = s;
         }
-        System.out.println("Путь из аргументов запуска приложения: " + path);
         procService.mainStart(path);
     }
 }

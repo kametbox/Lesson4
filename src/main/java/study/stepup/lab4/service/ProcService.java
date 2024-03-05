@@ -3,9 +3,6 @@ package study.stepup.lab4.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import study.stepup.lab4.checks.CheckAccesDate;
-import study.stepup.lab4.checks.CheckApplicationType;
-import study.stepup.lab4.checks.CheckFIO;
 import study.stepup.lab4.checks.Checks;
 import study.stepup.lab4.inserter.Inserter;
 import study.stepup.lab4.loader.*;
