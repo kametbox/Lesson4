@@ -1,5 +1,6 @@
 package study.stepup.lab4.inserter;
 
+import jakarta.transaction.Transactional;
 import lombok.*;
 import org.springframework.stereotype.Component;
 import study.stepup.lab4.loader.DataType;
@@ -16,6 +17,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Data
 @Getter
+@Transactional
 public class InsertingData implements Inserter {
 
     private final UsersRepository usersRepository;
