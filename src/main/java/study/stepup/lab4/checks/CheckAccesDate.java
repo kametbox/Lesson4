@@ -22,7 +22,7 @@ public class CheckAccesDate {
             try{
                 Timestamp.valueOf(dataType.getAccesDate());
             }catch (IllegalArgumentException e){
-                //логируем
+                //сведения о имени файла и значении человека заносятся в отдельный лог
                 try (FileWriter writer = new FileWriter("TimestampError.log", true)) {
                     SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
                     Date date = new Date(System.currentTimeMillis());
