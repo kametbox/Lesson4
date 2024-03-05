@@ -21,32 +21,28 @@ public class LoaderFromFiles implements Loader{
 
         List<DataType> dataFromFiles = new ArrayList<>();
         for (File file : files) {
-            try {
-                Scanner scan = new Scanner(file);
-                while (scan.hasNext()) {
-                    String dataLine = scan.nextLine();
-                    String[] words = dataLine.split("\\s+");
-                    DataType dataType = new DataType();
-                    if (words.length == 7) {
-                        try {
-                            dataType.setFileName(file.getName());
-                            dataType.setLogin(words[0]);
-                            dataType.setSurname(words[1]);
-                            dataType.setName(words[2]);
-                            dataType.setPatr(words[3]);
-                            dataType.setAccesDate(words[4]+" "+words[5]);
-                            dataType.setApplication(words[6]);
 
-                            dataFromFiles.add(dataType);
+            Scanner scan = new Scanner(file);
+            while (scan.hasNext()) {
+                String dataLine = scan.nextLine();
+                String[] words = dataLine.split("\\s+");
+                DataType dataType = new DataType();
+                if (words.length == 7) {
+                    try {
+                        dataType.setFileName(file.getName());
+                        dataType.setLogin(words[0]);
+                        dataType.setSurname(words[1]);
+                        dataType.setName(words[2]);
+                        dataType.setPatr(words[3]);
+                        dataType.setAccesDate(words[4]+" "+words[5]);
+                        dataType.setApplication(words[6]);
 
-                        } catch (Exception ex) {
-                            continue;
-                        }
+                        dataFromFiles.add(dataType);
+
+                    } catch (Exception ex) {
+                        continue;
                     }
-
                 }
-            } catch (FileNotFoundException fileNotFoundException) {
-                throw fileNotFoundException;
             }
         }
         return dataFromFiles;

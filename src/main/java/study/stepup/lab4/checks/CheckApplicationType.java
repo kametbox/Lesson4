@@ -9,7 +9,7 @@ import java.util.List;
 
 @Component
 public class CheckApplicationType implements Checks{
-    public List<DataType> start(List<DataType> dataTypeList) throws IOException {
+    public List<DataType> start(List<DataType> dataTypeList) {
 
         List<DataType> dataTypeList2 = new ArrayList<>();
         for(DataType dataType : dataTypeList){
