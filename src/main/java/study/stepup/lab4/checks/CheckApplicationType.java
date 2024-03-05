@@ -8,14 +8,16 @@ import java.util.List;
 
 @Component
 public class CheckApplicationType implements Checks{
+    @LogTransformation
     public List<DataType> start(List<DataType> dataTypeList) {
 
         List<DataType> dataTypeList2 = new ArrayList<>();
         for(DataType dataType : dataTypeList){
+            DataType dataType2 = dataType.clone();
             if (!dataType.getApplication().equals("web") && !dataType.getApplication().equals("mobile")){
-                dataType.setApplication("other:"+dataType.getApplication());
+                dataType2.setApplication("other:"+dataType.getApplication());
             }
-            dataTypeList2.add(dataType);
+            dataTypeList2.add(dataType2);
         }
         return dataTypeList2;
     }

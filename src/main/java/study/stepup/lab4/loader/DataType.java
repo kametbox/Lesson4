@@ -14,7 +14,21 @@ public class DataType {
     private String surname;
     private String name;
     private String patr;
-    //private Timestamp accesDate;
     private String accesDate;
     private String application;
+
+    public DataType clone(){
+
+        DataType retDataType = new DataType();
+
+        retDataType.setFileName(this.getFileName());
+        retDataType.setLogin(this.getLogin());
+        retDataType.setSurname(this.getSurname());
+        retDataType.setName(this.getName());
+        retDataType.setPatr(this.getPatr());
+        retDataType.setAccesDate(this.getAccesDate());
+        retDataType.setApplication(this.getApplication());
+
+        return retDataType;
+    }
 }
