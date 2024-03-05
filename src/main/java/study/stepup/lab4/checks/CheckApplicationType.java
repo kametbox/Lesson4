@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Component
-public class CheckApplicationType {
+public class CheckApplicationType implements Checks{
     public List<DataType> start(List<DataType> dataTypeList) throws IOException {
 
         List<DataType> dataTypeList2 = new ArrayList<>();

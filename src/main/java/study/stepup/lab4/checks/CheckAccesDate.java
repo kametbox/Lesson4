@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Component
-public class CheckAccesDate {
+public class CheckAccesDate implements Checks{
     public List<DataType> start(List<DataType> dataTypeList) throws IOException {
 
         List<DataType> dataTypeList2 = new ArrayList<>();
