@@ -20,6 +20,7 @@ public class LoaderFromFiles implements Loader{
         File[] files = folder.listFiles();
 
         List<DataType> dataFromFiles = new ArrayList<>();
+
         for (File file : files) {
             try {
                 Scanner scan = new Scanner(file);
