@@ -3,7 +3,6 @@ package study.stepup.lab4.checks;
 import org.springframework.stereotype.Component;
 import study.stepup.lab4.loader.DataType;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
