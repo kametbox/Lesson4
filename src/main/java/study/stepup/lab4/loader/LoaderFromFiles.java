@@ -23,8 +23,7 @@ public class LoaderFromFiles implements Loader{
         List<DataType> dataFromFiles = new ArrayList<>();
 
         for (File file : files) {
-            try {
-                Scanner scan = new Scanner(file);
+            try (Scanner scan = new Scanner(file);) {
                 while (scan.hasNext()) {
                     String dataLine = scan.nextLine();
                     String[] words = dataLine.split("\\s+");
@@ -47,8 +46,8 @@ public class LoaderFromFiles implements Loader{
                     }
 
                 }
-            } catch (FileNotFoundException fileNotFoundException) {
-                throw fileNotFoundException;
+            } catch (Exception exception) {
+                throw exception;
             }
         }
 
