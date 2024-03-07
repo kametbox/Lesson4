@@ -1,0 +1,11 @@
+version: '3'
+services:
+  lesson4_DB:
+    image: postgres:12.18-bullseye
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USERNAME: postgres
+      POSTGRES_DB: lesson_4

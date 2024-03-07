@@ -2,7 +2,7 @@ spring:
   datasource:
     password: postgres
     username: postgres
-    url: jdbc:postgresql://localhost:5432/lesson_3
+    url: jdbc:postgresql://localhost:5432/lesson_4
   jpa:
     properties:
       hibernate:

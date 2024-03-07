@@ -32,12 +32,7 @@ public class InsertingData implements Inserter {
                     }
             );
 
-            Timestamp timestamp;
-            try {
-                timestamp = Timestamp.valueOf(dataType.getAccesDate());
-            } catch (IllegalArgumentException e){
-                continue;
-            }
+            Timestamp timestamp = Timestamp.valueOf(dataType.getAccesDate());
 
             Logins logins = new Logins(null, timestamp, currentUser, dataType.getApplication());
             loginsRepository.save(logins);
