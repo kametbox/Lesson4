@@ -44,8 +44,6 @@ public class LoaderFromFiles implements Loader{
                     }
 
                 }
-            } catch (Exception exception) {
-                throw exception;
             }
         }
         return dataFromFiles;
