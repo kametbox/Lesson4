@@ -15,7 +15,7 @@ public class CheckApplicationType implements Checks{
 
         List<DataType> dataTypeList2 = new ArrayList<>();
         for(DataType dataType : dataTypeList){
-            DataType dataType2 = dataType.clone();
+            DataType dataType2 = dataType.currentClone();
             if (!dataType.getApplication().equals("web") && !dataType.getApplication().equals("mobile")){
                 dataType2.setApplication("other:"+dataType.getApplication());
             }

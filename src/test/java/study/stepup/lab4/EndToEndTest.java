@@ -5,7 +5,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import study.stepup.lab4.repository.LoginsRepository;
 import study.stepup.lab4.repository.UsersRepository;
 import study.stepup.lab4.service.ProcService;
@@ -25,13 +24,13 @@ public class EndToEndTest {
         loginsRepository.deleteAll();
         usersRepository.deleteAll();
 
-        Assertions.assertTrue(usersRepository.count()==0);
-        Assertions.assertTrue(loginsRepository.count()==0);
+        Assertions.assertEquals(usersRepository.count(), 0);
+        Assertions.assertEquals(loginsRepository.count(), 0);
 
         //Стартанем основную операцию еще раз, чтоб добавила записи в БД
         ctx.getBean("procService", ProcService.class).mainStart(path);
 
-        Assertions.assertTrue(usersRepository.count()==5);
-        Assertions.assertTrue(loginsRepository.count()==11);
+        Assertions.assertEquals(usersRepository.count(), 5);
+        Assertions.assertEquals(loginsRepository.count(), 11);
     }
 }

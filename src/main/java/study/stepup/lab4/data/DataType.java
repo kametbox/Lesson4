@@ -17,7 +17,7 @@ public class DataType {
     private String accesDate;
     private String application;
 
-    public DataType clone(){
+    public DataType currentClone(){
 
         DataType retDataType = new DataType();
 

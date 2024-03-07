@@ -16,7 +16,7 @@ public class CheckFIO implements Checks{
         List<DataType> dataTypeList2 = new ArrayList<>();
         for(DataType dataType : dataTypeList){
 
-            DataType dataType2 = dataType.clone();
+            DataType dataType2 = dataType.currentClone();
 
             dataType2.setSurname(dataType.getSurname().substring(0,1).toUpperCase()+dataType.getSurname().substring(1));
             dataType2.setName(dataType.getName().substring(0,1).toUpperCase()+dataType.getName().substring(1));
