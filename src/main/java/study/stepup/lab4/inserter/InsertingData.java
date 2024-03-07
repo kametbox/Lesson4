@@ -3,7 +3,7 @@ package study.stepup.lab4.inserter;
 import jakarta.transaction.Transactional;
 import lombok.*;
 import org.springframework.stereotype.Component;
-import study.stepup.lab4.loader.DataType;
+import study.stepup.lab4.data.DataType;
 import study.stepup.lab4.model.Logins;
 import study.stepup.lab4.model.Users;
 import study.stepup.lab4.repository.LoginsRepository;

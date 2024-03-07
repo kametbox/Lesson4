@@ -2,9 +2,9 @@ package study.stepup.lab4.service;
 
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 import study.stepup.lab4.checks.Checks;
+import study.stepup.lab4.data.DataType;
 import study.stepup.lab4.inserter.Inserter;
 import study.stepup.lab4.loader.*;
 import study.stepup.lab4.utils.Utils;

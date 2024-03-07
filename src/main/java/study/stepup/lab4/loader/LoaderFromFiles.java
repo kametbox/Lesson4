@@ -2,6 +2,7 @@ package study.stepup.lab4.loader;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
+import study.stepup.lab4.data.DataType;
 
 import java.io.File;
 import java.io.FileNotFoundException;

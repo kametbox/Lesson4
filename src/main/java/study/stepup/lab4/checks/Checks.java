@@ -1,6 +1,6 @@
 package study.stepup.lab4.checks;
 
-import study.stepup.lab4.loader.DataType;
+import study.stepup.lab4.data.DataType;
 
 import java.io.IOException;
 import java.util.List;

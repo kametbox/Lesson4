@@ -2,7 +2,7 @@ package study.stepup.lab4.checks;
 
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
-import study.stepup.lab4.loader.DataType;
+import study.stepup.lab4.data.DataType;
 
 import java.util.ArrayList;
 import java.util.List;

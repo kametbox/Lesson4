@@ -21,6 +21,7 @@ public class AppRunner implements ApplicationRunner {
         for (String s : ar) {
             path = s;
         }
+        //if(path.isEmpty()){path= "C:\\Java_InnoTech\\Lab4\\src\\main\\resources\\files";}
         procService.mainStart(path);
     }
 }

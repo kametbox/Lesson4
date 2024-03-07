@@ -1,4 +1,4 @@
-package study.stepup.lab4.loader;
+package study.stepup.lab4.data;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
