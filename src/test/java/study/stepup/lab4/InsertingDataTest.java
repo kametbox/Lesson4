@@ -1,7 +1,6 @@
 package study.stepup.lab4;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.context.ApplicationContext;
@@ -10,8 +9,8 @@ import study.stepup.lab4.repository.UsersRepository;
 import study.stepup.lab4.service.ProcService;
 import java.io.IOException;
 
-public class EndToEndTest {
-    @Test @DisplayName("End-to-end test")
+public class InsertingDataTest {
+    @Test
     public void applicationTest() throws IOException {
         String path = System.getProperty("user.dir")+"\\src\\test\\java\\study\\stepup\\lab4\\files";
 

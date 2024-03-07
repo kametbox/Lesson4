@@ -32,7 +32,7 @@ public class Lab4ApplicationTests {
         this.loginsRepository = loginsRepository;
     }
 
-    //проверим, что бины созданы и внедрены
+    //ищем конкретные бины
     @Test
     public void contextLoads() {
 
