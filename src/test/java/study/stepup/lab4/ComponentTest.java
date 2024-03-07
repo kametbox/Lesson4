@@ -2,18 +2,12 @@ package study.stepup.lab4;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.SpringApplication;
-import org.springframework.context.ApplicationContext;
 import study.stepup.lab4.checks.CheckAccesDate;
 import study.stepup.lab4.checks.CheckApplicationType;
 import study.stepup.lab4.checks.CheckFIO;
 import study.stepup.lab4.data.DataType;
 import study.stepup.lab4.loader.LoaderFromFiles;
-import study.stepup.lab4.model.Logins;
-import study.stepup.lab4.model.Users;
-
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -70,7 +64,7 @@ public class ComponentTest{
         chekedTypeList = new CheckAccesDate().start(dataTypeList);
 
         for (DataType dataType: chekedTypeList){
-            Assertions.assertTrue(dataType.getAccesDate() != null);
+            Assertions.assertNotNull(dataType.getAccesDate());
             Timestamp.valueOf(dataType.getAccesDate());
         }
     }

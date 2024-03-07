@@ -15,7 +15,7 @@ public class InsertingDataTest {
         String path = System.getProperty("user.dir")+"\\src\\test\\java\\study\\stepup\\lab4\\files";
 
         //Определим контекст всего приложения в т.ч. для работы с БД
-        ApplicationContext ctx = SpringApplication.run(Lab4Application.class, new String[]{path});
+        ApplicationContext ctx = SpringApplication.run(Lab4Application.class, path);
         UsersRepository usersRepository = ctx.getBean(UsersRepository.class);
         LoginsRepository loginsRepository = ctx.getBean(LoginsRepository.class);
 
