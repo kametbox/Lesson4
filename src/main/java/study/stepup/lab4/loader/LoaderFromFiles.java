@@ -24,13 +24,14 @@ public class LoaderFromFiles implements Loader{
 
         if (files.length > 0) {
             for (File file : files) {
-                try (Scanner scan = new Scanner(file);) {
+                try (Scanner scan = new Scanner(file)) {
                     while (scan.hasNext()) {
                         String dataLine = scan.nextLine();
                         String[] words = dataLine.split("\\s+");
                         DataType dataType = new DataType();
+                        //проверяем что строка состоит из 7 слов разделенных пробелами. Если нет, то это не наш формат
                         if (words.length == 7) {
-                            try {
+                            //try {
                                 dataType.setFileName(file.getName());
                                 dataType.setLogin(words[0]);
                                 dataType.setSurname(words[1]);
@@ -41,9 +42,9 @@ public class LoaderFromFiles implements Loader{
 
                                 dataFromFiles.add(dataType);
 
-                            } catch (Exception ex) {
-                                continue;
-                            }
+//                            } catch (Exception ex) {
+//                                continue;
+//                            }
                         }
 
                     }
