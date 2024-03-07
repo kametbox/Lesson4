@@ -51,6 +51,7 @@ public class LoaderFromFiles implements Loader{
                 throw fileNotFoundException;
             }
         }
+
         return dataFromFiles;
     }
 }
