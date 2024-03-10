@@ -31,16 +31,6 @@ public class LogTransBeanPostProcessor implements BeanPostProcessor {
         if (beanClass != null) {
             return Proxy.newProxyInstance(beanClass.getClassLoader(), beanClass.getInterfaces(),
                     (proxy, method, args) -> {
-//                        String text = "";
-//                        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-//                        text = text + "\nДата и время начала операции: " + formatter.format(new Date());
-//                        text = text + "\nИмя класса: " + beanClass.getName();
-//                        text = text + "\nВходные параметры: " + Arrays.toString(args);
-//                        Object result = method.invoke(bean, args);
-//                        text = text + "\nВозвращаемые данные: " + result.toString();
-//                        text = text + "\n----------------------------------------------";
-
-
                         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
                         String log = formatter.format(new Date()) + '\n';
                         log+= beanClass.getName()+ '\n';
@@ -54,8 +44,6 @@ public class LogTransBeanPostProcessor implements BeanPostProcessor {
                         try (FileWriter fw = new FileWriter(bean.getClass().getAnnotation(LogTransformation.class).fileName(), true);
                              BufferedWriter bw = new BufferedWriter(fw)) {
                             bw.write(log);
-//                        } catch (IOException e) {
-//                            e.printStackTrace();
                         }
 
                         return result;
