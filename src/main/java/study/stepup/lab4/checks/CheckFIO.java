@@ -9,8 +9,8 @@ import java.util.List;
 
 @Component
 @Order(2)
+@LogTransformation
 public class CheckFIO implements Checks{
-    @LogTransformation
     public List<DataType> start(List<DataType> dataTypeList){
 
         List<DataType> dataTypeList2 = new ArrayList<>();

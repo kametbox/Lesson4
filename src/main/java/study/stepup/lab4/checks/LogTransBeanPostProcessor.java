@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
-import java.io.IOException;
 import java.lang.reflect.Proxy;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
