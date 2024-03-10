@@ -13,16 +13,15 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicReference;
 
 @Component
 public class LogTransBeanPostProcessor implements BeanPostProcessor {
     private Map<String, Class> map = new HashMap<>();
 
     @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+    public Object postProcessBeforeInitialization(Object bean, String beanNameString) throws BeansException {
         if (bean.getClass().isAnnotationPresent(LogTransformation.class)) {
-            map.put(beanName, bean.getClass());
+            map.put(beanNameString, bean.getClass());
         }
         return bean;
     }
