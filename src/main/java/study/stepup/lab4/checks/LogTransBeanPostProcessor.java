@@ -19,9 +19,9 @@ public class LogTransBeanPostProcessor implements BeanPostProcessor {
     private Map<String, Class> map = new HashMap<>();
 
     @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanNameString) throws BeansException {
+    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (bean.getClass().isAnnotationPresent(LogTransformation.class)) {
-            map.put(beanNameString, bean.getClass());
+            map.put(beanName, bean.getClass());
         }
         return bean;
     }
@@ -55,8 +55,8 @@ public class LogTransBeanPostProcessor implements BeanPostProcessor {
                         try (FileWriter fw = new FileWriter(bean.getClass().getAnnotation(LogTransformation.class).fileName(), true);
                              BufferedWriter bw = new BufferedWriter(fw)) {
                             bw.write(log);
-                        } catch (IOException e) {
-                            e.printStackTrace();
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
                         }
 
                         return result;
