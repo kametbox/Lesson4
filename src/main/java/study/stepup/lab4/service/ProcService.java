@@ -7,7 +7,6 @@ import study.stepup.lab4.checks.Checks;
 import study.stepup.lab4.data.DataType;
 import study.stepup.lab4.inserter.Inserter;
 import study.stepup.lab4.loader.*;
-import study.stepup.lab4.utils.Utils;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,9 +22,7 @@ public class ProcService {
         List<DataType> dataTypeList = loaderFromFiles.loadData(path);
 
         for(Checks checks : checksList){
-            //dataTypeList = checks.start(dataTypeList);
-            Checks checks2 = Utils.log(checks);
-            dataTypeList = checks2.start(dataTypeList);
+            dataTypeList = checks.start(dataTypeList);
         }
 
         insertingData.start(dataTypeList);
