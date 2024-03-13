@@ -4,6 +4,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import study.stepup.lab4.data.DataType;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Date;
@@ -24,19 +25,18 @@ public class CheckAccesDate implements Checks{
                 Timestamp.valueOf(dataType.getAccesDate());
             }catch (IllegalArgumentException e){
                 //сведения о имени файла и значении человека заносятся в отдельный лог
-                try (FileWriter writer = new FileWriter("TimestampError.log", true)) {
-                    SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
-                    Date date = new Date(System.currentTimeMillis());
-                    AtomicReference<String> log = new AtomicReference<>(formatter.format(date) + '\n');
-                    log.set(log + dataType.getFileName() + '\n');
-                    log.set(log + dataType.getAccesDate() + '\n');
-                    log.set(log + dataType.getSurname()+ " "+dataType.getName()+ " " +dataType.getPatr() + '\n');
-                    log.set(log + "\n");
-                    writer.write(log.get());
-                    writer.flush();
-                } catch (IOException ex) {
-                    throw ex;
+                SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+                String log = formatter.format(new java.util.Date()) + '\n';
+                log+= dataType.getFileName() + '\n';
+                log+= log + dataType.getAccesDate() + '\n';
+                log+= log + dataType.getSurname()+ " "+dataType.getName()+ " " +dataType.getPatr() + '\n';
+                log+= log + "\n";
+
+                try (FileWriter fw = new FileWriter("TimestampError.log", true);
+                     BufferedWriter bw = new BufferedWriter(fw)) {
+                    bw.write(log);
                 }
+
                 continue;
             }
             dataTypeList2.add(dataType);
